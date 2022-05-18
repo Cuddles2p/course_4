@@ -2,17 +2,18 @@
 Количество элементов (n) вводится с клавиатуры.'''
 while True:
     try:
-        n = float(input('Введите количество элементов: '))
+        n = int(input('введите количество чисел: '))
+        if n == 0000:
+            print('завершение работы')
+            break
+        else:
+            i = 0
+            a = 1
+            sum = 0
+            while i < n:
+                sum += a
+                a /= -2
+                i += 1
+            print(sum)
     except ValueError:
-        print('Неверный формат')
-        break
-    i = 0
-    range_number = 1
-    sum = 0
-    while i < n:
-        sum += range_number
-        range_number /= -2
-        i += 1
-
-    print(f'Сумма {sum}')
-    break
+        print('Неверный формат! Используйте только натуральные числа')
